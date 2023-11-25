@@ -4,7 +4,7 @@ from pymongo import MongoClient
 from bson import ObjectId  # Import ObjectId from bson module
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/get_listings": {"origins": "http://127.0.0.1:5500"}})
 
 # Connect to your MongoDB cluster
 client = MongoClient('mongodb+srv://jhaadi4444:work123@work.ooz3uja.mongodb.net/')
